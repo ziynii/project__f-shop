@@ -1,0 +1,23 @@
+.header {
+	padding: 24px 0;
+
+	&-wrapper {
+		@include flexbox(between);
+	}
+
+	&-menu-button,
+	&-cart-button {
+		width: 32px;
+		height: 32px;
+
+		.fa-bars,
+		.fa-cart-shopping {
+			font-size: 20px;
+			color: $primary;
+
+			&:active {
+				opacity: 0.4;
+			}
+		}
+	}
+}
