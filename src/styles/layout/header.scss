@@ -1,5 +1,11 @@
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: $header-level;
 	padding: 24px 0;
+	background-color: $white;
 
 	&-wrapper {
 		@include flexbox(between);
@@ -7,6 +13,7 @@
 
 	&-menu-button,
 	&-cart-button {
+		@include flexbox;
 		width: 32px;
 		height: 32px;
 
