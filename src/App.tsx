@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles/main.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Header from './components/header';
+import Home from './routes/home';
+import Cart from './routes/cart';
 
 function App() {
 	return (
 		<>
-			<Header />
+			<BrowserRouter>
+				<Header />
+
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/cart" element={<Cart />} />
+				</Routes>
+			</BrowserRouter>
 		</>
 	);
 }
