@@ -20,3 +20,8 @@ export async function getCategory() {
 	const response = await fetch('https://fakestoreapi.com/products/categories'); //
 	return await response.json();
 }
+
+export async function getCategoryProducts(name: string | undefined) {
+	const response = await fetch(`https://fakestoreapi.com/products/category/${name}`); //
+	return await response.json();
+}
