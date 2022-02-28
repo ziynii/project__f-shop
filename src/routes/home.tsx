@@ -1,34 +1,29 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
+import { getCategory } from '../api';
 
 const Home = () => {
+	const { data } = useQuery<string[]>('category', getCategory);
+
 	return (
 		<div className="category-wrapper">
-			<div className="category-box men" style={{ backgroundImage: 'url(/images/men.jpg)' }}>
-				<div className="category-title">
-					<h2>MEN</h2>
-				</div>
-			</div>
-			<div className="category-box women" style={{ backgroundImage: 'url(/images/women.jpg)' }}>
-				<div className="category-title">
-					<h2>WOMEN</h2>
-				</div>
-			</div>
-			<div
-				className="category-box jewelery"
-				style={{ backgroundImage: 'url(/images/jewelery.jpg)' }}
-			>
-				<div className="category-title">
-					<h2>JEWELERY</h2>
-				</div>
-			</div>
-			<div
-				className="category-box electronics"
-				style={{ backgroundImage: 'url(/images/electronics.jpg)' }}
-			>
-				<div className="category-title">
-					<h2>ELECTRONICS</h2>
-				</div>
-			</div>
+			{data?.map((category, i) => {
+				const categoryTitle = category.replace("'s clothing", '');
+
+				return (
+					<Link key={i} to={`/category/${categoryTitle}`}>
+						<div
+							className={`category-box ${categoryTitle}`}
+							style={{ backgroundImage: `url(/images/${categoryTitle}.jpg)` }}
+						>
+							<div className="category-title">
+								<h2>{categoryTitle.toUpperCase()}</h2>
+							</div>
+						</div>
+					</Link>
+				);
+			})}
 		</div>
 	);
 };
