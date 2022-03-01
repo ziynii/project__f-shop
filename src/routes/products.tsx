@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { getCategoryProducts, IProduct } from '../api';
 import Loading from '../components/loading';
@@ -36,7 +37,9 @@ const Category = () => {
 											{data?.map(product => {
 												return (
 													<li className="products-item" key={product.id}>
-														<ProductCard product={product} />
+														<Link to={`/products/${shortName}/${product.id}`}>
+															<ProductCard product={product} />
+														</Link>
 													</li>
 												);
 											})}
