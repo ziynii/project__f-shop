@@ -1,0 +1,31 @@
+.products-item {
+	width: 48%;
+	margin-bottom: 16px;
+
+	.item {
+		&-image {
+			@include flexbox;
+			height: 280px;
+			margin-bottom: 8px;
+			background-color: $white;
+			border-radius: 8px;
+			overflow: hidden;
+
+			img {
+				width: 80%;
+			}
+		}
+
+		&-title {
+			@include text-style(13, $primary);
+			margin-bottom: 4px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		&-price {
+			@include text-style(12, $secondary);
+		}
+	}
+}
