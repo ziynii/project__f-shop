@@ -3,7 +3,7 @@
 @import './constants/_color.scss';
 @import './constants/_grid.scss';
 @import './constants/_typography.scss';
-@import './constants/z-index.scss';
+@import './constants/_z-index.scss';
 
 @import './base/_reset.scss';
 @import './base/_globals.scss';
@@ -14,5 +14,10 @@
 @import './mixin/_responsive.scss';
 @import './mixin/_text-style.scss';
 
-@import './layout/grids.scss';
-@import './layout/header.scss';
+@import './component/_product-card.scss';
+@import './component/_loading.scss';
+
+@import './layout/_grids.scss';
+@import './layout/_header.scss';
+@import './layout/_home.scss';
+@import './layout/_products.scss';
