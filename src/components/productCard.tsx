@@ -12,7 +12,7 @@ const ProductCard = ({ product }: ICardProps) => {
 				<img src={product?.image} alt={product.title + '이미지'} />
 			</div>
 			<h3 className="item-title">{product.title}</h3>
-			<span className="item-price">{product.price}</span>
+			<span className="item-price">&#36;{product.price}</span>
 		</div>
 	);
 };
