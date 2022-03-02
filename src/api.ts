@@ -25,3 +25,8 @@ export async function getCategoryProducts(name: string | undefined) {
 	const response = await fetch(`https://fakestoreapi.com/products/category/${name}`); //
 	return await response.json();
 }
+
+export async function getSingleProduct(idToNum: number | undefined) {
+	const response = await fetch(`https://fakestoreapi.com/products/${idToNum}`); //
+	return await response.json();
+}
