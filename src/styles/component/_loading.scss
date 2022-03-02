@@ -2,7 +2,7 @@
 	position: relative;
 	width: 100%;
 	height: calc(100vh - 80px);
-	background-color: $white;
+	background-color: transparent;
 
 	.load {
 		@include pos-center;
