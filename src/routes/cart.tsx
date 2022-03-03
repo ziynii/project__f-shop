@@ -18,9 +18,20 @@ const Cart = () => {
 								return <CartItem item={item} key={item.id} />;
 							})}
 						</ul>
+
+						<div className="total-price">
+							<dl>
+								<dt>TOTAL</dt>
+								<dd>&#36;230</dd>
+							</dl>
+						</div>
 					</div>
 				</div>
 			</div>
+
+			<button type="button" className="pay-button">
+				주문하기
+			</button>
 		</div>
 	);
 };
