@@ -1,11 +1,17 @@
-import { atom } from 'recoil';
+import { IProduct } from './api';
+import { atom, selector } from 'recoil';
 
 export const loginState = atom({
-	key: 'login',
+	key: 'loginState',
 	default: false,
 });
 
 export const goBackState = atom({
-	key: 'goback',
+	key: 'goBackState',
+	default: false,
+});
+
+export const isAddCartState = atom({
+	key: 'isAddCartState',
 	default: false,
 });
