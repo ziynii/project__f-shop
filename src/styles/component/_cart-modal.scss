@@ -1,0 +1,47 @@
+.cart-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: $cart-modal-level;
+	background: rgba($dark, 0.4);
+
+	&-wrapper {
+		@include pos-center;
+		width: 60%;
+		padding: 16px;
+		background-color: $white;
+		border-radius: 4px;
+
+		h4 {
+			@include text-style(14, $primary);
+			@include flexbox;
+			margin-bottom: 16px;
+
+			.fa-check {
+				margin-right: 4px;
+				font-size: 16px;
+				color: $dark;
+			}
+		}
+
+		.button-group {
+			@include flexbox(between);
+
+			button {
+				@include text-style(13, $white);
+				width: 49%;
+				padding: 8px;
+				background-color: $black;
+				border: 1px solid $black;
+				border-radius: 4px;
+
+				&.go-shop {
+					color: $black;
+					background-color: $white;
+				}
+			}
+		}
+	}
+}
