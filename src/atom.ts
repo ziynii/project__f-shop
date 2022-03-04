@@ -15,3 +15,8 @@ export const isAddCartState = atom({
 	key: 'isAddCartState',
 	default: false,
 });
+
+export const cartItemsState = atom<IProduct[]>({
+	key: 'cartItemsState',
+	default: [],
+});
