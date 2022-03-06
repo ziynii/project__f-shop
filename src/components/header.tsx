@@ -1,18 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
-import { goBackState } from '../atom';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { cartItemsState, goBackState } from '../atom';
 
 const Header = () => {
 	const navigate = useNavigate();
 	const [isGoBack, setIsGoBack] = useRecoilState(goBackState);
+	const cartItems = useRecoilValue(cartItemsState);
+	const cartItemsQuan = cartItems.length;
 
 	const goBackLocate = () => {
 		setIsGoBack(false);
 		navigate(-1);
 	};
-
-	console.log(isGoBack);
 
 	return (
 		<header className="header">
@@ -38,6 +38,7 @@ const Header = () => {
 
 							<div className="header-cart-button" onClick={() => navigate('/cart')}>
 								<i className="fa-solid fa-cart-shopping"></i>
+								<div className="quantity">{cartItemsQuan}</div>
 							</div>
 						</div>
 					</div>
