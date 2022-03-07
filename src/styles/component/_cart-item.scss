@@ -4,6 +4,10 @@
 	height: 160px;
 	border-bottom: 1px solid $border;
 
+	&:last-child {
+		border-bottom: 0;
+	}
+
 	.align-box {
 		@include flexbox(start);
 
