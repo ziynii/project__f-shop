@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { cartItemsState } from '../atom';
-import CartItem from '../components/cartItem';
+import CartList from '../components/cartList';
 
 const Cart = () => {
 	const cartItems = useRecoilValue(cartItemsState);
@@ -22,11 +22,7 @@ const Cart = () => {
 								<i className="fa-solid fa-cart-shopping"></i> 장바구니가 비어있습니다
 							</div>
 						) : (
-							<ul className="cart-list">
-								{cartItems.map(item => (
-									<CartItem item={item} key={item.id} />
-								))}
-							</ul>
+							<CartList />
 						)}
 
 						<div className="total-price">
