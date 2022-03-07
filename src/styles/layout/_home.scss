@@ -1,7 +1,7 @@
 .category-wrapper {
-	height: calc(100vh - 80px);
+	height: calc(100vh - #{$header-height-sm});
 	overflow: hidden;
-	margin-top: 80px;
+	margin-top: $header-height-sm;
 
 	.category-box {
 		position: relative;
