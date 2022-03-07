@@ -1,13 +1,27 @@
 .cart {
-	margin-top: 80px;
-	margin-bottom: 64px;
+	$total-price-height-sm: 64px;
+	margin-top: $header-height-sm;
+	margin-bottom: $cart-button-height;
 
-	&-list {
-		margin-bottom: 24px;
+	&-list,
+	&-empty {
+		height: calc(100vh - #{$header-height-sm + $cart-button-height + $total-price-height-sm});
+		overflow: auto;
+	}
+
+	&-empty {
+		@include text-style(18, $secondary);
+		@include flexbox;
+
+		.fa-cart-shopping {
+			margin-right: 8px;
+		}
 	}
 
 	.total-price {
-		margin-bottom: 24px;
+		height: $total-price-height-sm;
+		padding: 8px;
+		border-top: 2px solid $border;
 
 		dl {
 			@include flexbox(between);
