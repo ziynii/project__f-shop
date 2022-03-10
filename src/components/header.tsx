@@ -1,13 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { cartItemsState, goBackState } from '../atom';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { cartItemsState, goBackState, openSideBarState } from '../atom';
 
 const Header = () => {
 	const navigate = useNavigate();
 	const [isGoBack, setIsGoBack] = useRecoilState(goBackState);
 	const cartItems = useRecoilValue(cartItemsState);
 	const cartItemsQuan = cartItems.length;
+	const setOpenSideBar = useSetRecoilState(openSideBarState);
 
 	const goBackLocate = () => {
 		setIsGoBack(false);
@@ -21,7 +22,11 @@ const Header = () => {
 					<div className="col-sm-4">
 						<div className="header-wrapper">
 							{isGoBack === false ? (
-								<button className="header-menu-button sm-only" type="button">
+								<button
+									className="header-menu-button sm-only"
+									type="button"
+									onClick={() => setOpenSideBar(true)}
+								>
 									<i className="fa-solid fa-bars" />
 								</button>
 							) : null}
