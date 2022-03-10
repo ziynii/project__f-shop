@@ -20,3 +20,8 @@ export const cartItemsState = atom<IProduct[]>({
 	key: 'cartItemsState',
 	default: [],
 });
+
+export const openSideBarState = atom({
+	key: 'openSideBarState',
+	default: false,
+});
