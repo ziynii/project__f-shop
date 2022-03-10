@@ -25,8 +25,8 @@ const CartItem = ({ item }: ICartItemProps) => {
 				<div className="item-center-box">
 					<div className="item-info">
 						<h4 className="title">{item.title}</h4>
-						<span className="quan">1</span>
-						<span className="option">ONE SIZE</span>
+						<span className="quan">QUANTITY : 1 /</span>
+						<span className="option"> ONE SIZE</span>
 					</div>
 					<button className="delete-button" onClick={deleteItem}>
 						Remove
