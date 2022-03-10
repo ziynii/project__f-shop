@@ -1,0 +1,45 @@
+.side-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: $side-bar-level;
+	background-color: $dark;
+
+	.side-nav {
+		height: 100%;
+		padding: 48px 24px;
+	}
+
+	.nav-list {
+		@include column-flexbox;
+		height: 100%;
+
+		.nav-item {
+			padding: 16px 0;
+
+			&:active h2 {
+				color: $secondary;
+			}
+
+			h2 {
+				font-size: 36px;
+				font-family: 'rasa';
+				color: $white;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.close-button {
+		position: absolute;
+		top: 48px;
+		right: 24px;
+		font-size: 28px;
+
+		.fa-xmark {
+			color: $white;
+		}
+	}
+}
