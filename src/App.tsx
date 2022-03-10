@@ -8,8 +8,13 @@ import Home from './routes/home';
 import Cart from './routes/cart';
 import Products from './routes/products';
 import ProductDetail from './routes/productDetail';
+import { useRecoilValue } from 'recoil';
+import { openSideBarState } from './atom';
+import SideBar from './components/sideBar';
 
 function App() {
+	const openSideBar = useRecoilValue(openSideBarState);
+
 	return (
 		<>
 			<BrowserRouter>
@@ -21,6 +26,8 @@ function App() {
 					<Route path="products/:name" element={<Products />} />
 					<Route path="products/:name/:productId" element={<ProductDetail />} />
 				</Routes>
+
+				{openSideBar === true ? <SideBar /> : null}
 			</BrowserRouter>
 		</>
 	);
