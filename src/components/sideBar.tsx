@@ -14,10 +14,10 @@ const SideBar = () => {
 		<div className="side-bar">
 			<div className="side-nav">
 				<ul className="nav-list">
-					{data?.map((item: string) => {
+					{data?.map((item: string, i) => {
 						const itemName = item.replace("'s clothing", '');
 						return (
-							<li className="nav-item" onClick={() => setOpenSideBar(false)}>
+							<li key={i} className="nav-item" onClick={() => setOpenSideBar(false)}>
 								<Link to={`/products/${itemName}`}>
 									<h2>{itemName}</h2>
 								</Link>
