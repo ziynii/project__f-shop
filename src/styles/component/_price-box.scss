@@ -1,0 +1,61 @@
+.price-box {
+	@include column-flexbox;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 40%;
+	height: 100%;
+	background-color: $background;
+	transform: translate3d(100%, 0, 0);
+	transition: transform 200ms ease-in-out;
+
+	& > * {
+		width: 90%;
+	}
+
+	&.active {
+		transform: translate3d(0, 0, 0);
+
+		.open-button {
+			.fa-angle-left {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.summary {
+		text-transform: uppercase;
+		margin-bottom: 48px;
+	}
+
+	.summary-info {
+		@include flexbox(between);
+		margin-bottom: 32px;
+
+		span {
+			@include text-style(18, $primary);
+			font-weight: 700;
+		}
+	}
+
+	.total-price {
+		margin-bottom: 48px;
+
+		.discount {
+			@include flexbox(between);
+			padding: 8px 0;
+
+			span {
+				@include text-style(16, $red);
+			}
+		}
+	}
+
+	.open-button {
+		@include pos-center-y;
+		left: -32px;
+		width: 32px;
+		height: 56px;
+		background-color: $background;
+	}
+}
