@@ -1,0 +1,47 @@
+.coupon-form {
+	margin-bottom: 48px;
+
+	.coupon {
+		&-select-box,
+		&-code-box {
+			width: 100%;
+			margin: 0 auto;
+
+			select,
+			input {
+				width: 100%;
+				padding: 12px 8px;
+				background-color: $white;
+			}
+		}
+
+		&-select-box {
+			margin-bottom: 32px;
+		}
+
+		&-code-box {
+			position: relative;
+
+			.input-button {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				width: 42px;
+				height: 42px;
+				background-color: $dark;
+
+				svg {
+					color: $white;
+				}
+			}
+		}
+
+		&-box-title {
+			margin-bottom: 16px;
+
+			h3 {
+				@include text-style(18, $dark);
+			}
+		}
+	}
+}
