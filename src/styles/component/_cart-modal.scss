@@ -10,6 +10,7 @@
 	&-wrapper {
 		@include pos-center;
 		width: 60%;
+		max-width: 400px;
 		padding: 16px;
 		background-color: $white;
 		border-radius: 4px;
@@ -41,6 +42,16 @@
 					color: $black;
 					background-color: $white;
 				}
+			}
+		}
+	}
+
+	@include responsive(T) {
+		&-wrapper {
+			padding: 24px 16px;
+
+			h4 {
+				@include text-style(18)
 			}
 		}
 	}
