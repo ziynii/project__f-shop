@@ -6,6 +6,7 @@ import { getSingleProduct, IProduct } from '../api';
 import { cartItemsState, goBackState, isAddCartState } from '../atom';
 import AddCartModal from '../components/addCartModal';
 import Loading from '../components/loading';
+import Product from '../components/product';
 
 const ProductDetail = () => {
 	const { productId } = useParams();
@@ -37,29 +38,7 @@ const ProductDetail = () => {
 		<div className="product-detail">
 			<div className="container">
 				<div className="row">
-					<div className="col-sm-4">
-						{isLoading ? (
-							<Loading />
-						) : (
-							<div className="product">
-								<div className="product-image">
-									<img src={data?.image} alt={data?.title + '이미지'} />
-								</div>
-
-								<div className="product-category">{data?.category}</div>
-
-								<div className="product-title">
-									<h2>{data?.title}</h2>
-								</div>
-
-								<div className="product-price">
-									<span>&#36;{data?.price}</span>
-								</div>
-
-								<p className="product-description">{data?.description}</p>
-							</div>
-						)}
-					</div>
+					<div className="col-sm-4">{isLoading ? <Loading /> : <Product data={data} />}</div>
 				</div>
 			</div>
 
