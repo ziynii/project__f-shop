@@ -12,7 +12,10 @@
 			overflow: hidden;
 
 			img {
-				width: 80%;
+				width: auto;
+				height: auto;
+				max-width: 90%;
+				max-height: 90%;
 			}
 		}
 
@@ -26,6 +29,17 @@
 
 		&-price {
 			@include text-style(12, $secondary);
+		}
+	}
+
+	@include responsive(T) {
+		width: 49%;
+
+		.item {
+			&-image {
+				@include flexbox;
+				height: 480px;
+			}
 		}
 	}
 }
