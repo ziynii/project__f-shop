@@ -25,3 +25,8 @@ export const openSideBarState = atom({
 	key: 'openSideBarState',
 	default: false,
 });
+
+export const headerGnbState = atom<string | undefined>({
+	key: 'headerGnbState',
+	default: '',
+});

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { cartItemsState, goBackState, openSideBarState } from '../atom';
+import { cartItemsState, goBackState, headerGnbState, openSideBarState } from '../atom';
 
 const Header = () => {
 	const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Header = () => {
 	const cartItems = useRecoilValue(cartItemsState);
 	const cartItemsQuan = cartItems.length;
 	const setOpenSideBar = useSetRecoilState(openSideBarState);
+	const headerGnb = useRecoilValue(headerGnbState);
 
 	const goBackLocate = () => {
 		setIsGoBack(false);
@@ -39,6 +41,23 @@ const Header = () => {
 
 							<div className="header-logo" onClick={() => navigate('/')}>
 								<img src="/logo.svg" alt="로고" />
+							</div>
+
+							<div className="header-gnb sm-hidden">
+								<ul className="gnb-list">
+									<li className={'gnb-item' + (headerGnb === 'men' ? ' active' : '')}>
+										<Link to="/products/men">MEN</Link>
+									</li>
+									<li className={'gnb-item' + (headerGnb === 'women' ? ' active' : '')}>
+										<Link to="/products/women">WOMEN</Link>
+									</li>
+									<li className={'gnb-item' + (headerGnb === 'jewelery' ? ' active' : '')}>
+										<Link to="/products/jewelery">JEWELERY</Link>
+									</li>
+									<li className={'gnb-item' + (headerGnb === 'electronics' ? ' active' : '')}>
+										<Link to="/products/electronics">ELECTRONICS</Link>
+									</li>
+								</ul>
 							</div>
 
 							<div className="header-cart-button" onClick={() => navigate('/cart')}>

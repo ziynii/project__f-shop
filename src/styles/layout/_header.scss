@@ -46,4 +46,20 @@
 			border-radius: 50%;
 		}
 	}
+
+	&-gnb {
+		.gnb-list {
+			@include flexbox;
+		}
+
+		.gnb-item {
+			@include text-style(16, $secondary);
+			margin: 0 8px;
+			font-weight: 700;
+
+			&.active {
+				color: $dark;
+			}
+		}
+	}
 }
