@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { cartItemsState, goBackState, openSideBarState } from '../atom';
+import { cartItemsState, goBackState, headerGnbState, openSideBarState } from '../atom';
 import HeaderGnb from './headerGnb';
 
 const Header = () => {
@@ -10,6 +10,11 @@ const Header = () => {
 	const cartItems = useRecoilValue(cartItemsState);
 	const cartItemsQuan = cartItems.length;
 	const setOpenSideBar = useSetRecoilState(openSideBarState);
+	const setHeaderGnb = useSetRecoilState(headerGnbState);
+	const onClickLogo = () => {
+		navigate('/');
+		setHeaderGnb('');
+	};
 
 	const goBackLocate = () => {
 		setIsGoBack(false);
@@ -38,7 +43,7 @@ const Header = () => {
 								</button>
 							) : null}
 
-							<div className="header-logo" onClick={() => navigate('/')}>
+							<div className="header-logo" onClick={onClickLogo}>
 								<img src="/logo.svg" alt="로고" />
 							</div>
 
