@@ -4,6 +4,21 @@
 	padding: 24px 0;
 	background-color: $background;
 
+	.go-back-button {
+		position: fixed;
+		top: 120px;
+		left: 24px;
+		width: 48px;
+		height: 48px;
+		background-color: $dark;
+		border-radius: 4px;
+
+		.fa-arrow-left {
+			font-size: 24px;
+			color: $white;
+		}
+	}
+
 	@include responsive(T) {
 		height: 100vh;
 	}

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { getSingleProduct, IProduct } from '../api';
 import { cartItemsState, goBackState, isAddCartState } from '../atom';
@@ -14,7 +14,7 @@ const ProductDetail = () => {
 	const setIsGoBack = useSetRecoilState(goBackState);
 	const [isAddCart, setIsAddCart] = useRecoilState(isAddCartState);
 	const [cartItems, setCartItems] = useRecoilState<IProduct[]>(cartItemsState);
-
+	const navigate = useNavigate();
 	const { data, isLoading } = useQuery<IProduct>(['product', idToNum], () =>
 		getSingleProduct(idToNum),
 	);
@@ -41,6 +41,10 @@ const ProductDetail = () => {
 					<div className="col-sm-4">{isLoading ? <Loading /> : <Product data={data} />}</div>
 				</div>
 			</div>
+
+			<button className="go-back-button" onClick={() => navigate(-1)}>
+				<i className="fa-solid fa-arrow-left"></i>
+			</button>
 
 			<button type="button" className="add-cart-button" onClick={onClickAddCartButton}>
 				장바구니에 담기
