@@ -12,4 +12,14 @@
 			color: $dark;
 		}
 	}
+
+	@include responsive(D) {
+		.gnb-item {
+			@include text-style(18);
+
+			&:hover {
+				color: $dark;
+			}
+		}
+	}
 }
