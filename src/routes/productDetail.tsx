@@ -42,7 +42,7 @@ const ProductDetail = () => {
 				</div>
 			</div>
 
-			<button className="go-back-button" onClick={() => navigate(-1)}>
+			<button className="go-back-button sm-hidden" onClick={() => navigate(-1)}>
 				<i className="fa-solid fa-arrow-left"></i>
 			</button>
 
