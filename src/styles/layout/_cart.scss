@@ -29,4 +29,14 @@
 			font-weight: 700;
 		}
 	}
+
+	@include responsive(T) {
+		margin-bottom: 0;
+
+		&-list,
+		&-empty {
+			height: calc(100vh - #{$header-height-sm});
+			padding: 24px 0;
+		}
+	}
 }
