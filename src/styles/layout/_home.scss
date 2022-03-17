@@ -11,15 +11,38 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		transition: transform 200ms ease-in-out;
 
 		.category-title {
 			width: 100%;
 			height: 100%;
 			background-color: rgba($dark, 0.3);
+			transition: background-color 200ms ease-in-out;
 
 			h2 {
 				@include pos-center;
 				color: $white;
+			}
+		}
+	}
+
+	@include responsive(D) {
+		@include flexbox;
+		height: calc(100vh - #{$header-height-lg});
+		margin-top: $header-height-lg;
+		background-color: $border;
+
+		.category-box {
+			width: 300px;
+			height: 600px;
+
+			&:hover {
+				transform: scale(1.1);
+				z-index: 50;
+
+				.category-title {
+					background-color: rgba($dark, 0.1);
+				}
 			}
 		}
 	}
