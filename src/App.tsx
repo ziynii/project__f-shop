@@ -11,6 +11,7 @@ import ProductDetail from './routes/productDetail';
 import { useRecoilValue } from 'recoil';
 import { openSideBarState } from './atom';
 import SideBar from './components/sideBar';
+import ScrollToTop from './scrollTop';
 
 function App() {
 	const openSideBar = useRecoilValue(openSideBarState);
@@ -18,6 +19,7 @@ function App() {
 	return (
 		<>
 			<BrowserRouter>
+				<ScrollToTop />
 				<Header />
 
 				<Routes>
