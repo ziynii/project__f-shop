@@ -9,3 +9,9 @@
 	background-color: $black;
 	border-radius: 8px;
 }
+
+.pay-button {
+	@include responsive(T) {
+		position: relative;
+	}
+}
