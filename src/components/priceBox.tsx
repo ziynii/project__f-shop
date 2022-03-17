@@ -13,7 +13,7 @@ const PriceBox = ({ cartItems, summaryPrice }: IPriceBoxProps) => {
 	const [openPriceBox, setOpenPriceBox] = useState(false);
 
 	return (
-		<div className={'price-box' + (openPriceBox === true ? ' active' : '')}>
+		<div className={'price-box sm-hidden' + (openPriceBox === true ? ' active' : '')}>
 			<h2 className="summary">summary</h2>
 			<div className="summary-info">
 				<span className="summary-quan">상품 총 {cartItems.length}개</span>
