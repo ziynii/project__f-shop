@@ -38,7 +38,13 @@ const ProductDetail = () => {
 		<div className="product-detail">
 			<div className="container">
 				<div className="row">
-					<div className="col-sm-4">{isLoading ? <Loading /> : <Product data={data} />}</div>
+					<div className="col-sm-4">
+						{isLoading ? (
+							<Loading />
+						) : (
+							<Product data={data} onClickAddCartButton={onClickAddCartButton} />
+						)}
+					</div>
 				</div>
 			</div>
 
@@ -46,7 +52,7 @@ const ProductDetail = () => {
 				<i className="fa-solid fa-arrow-left"></i>
 			</button>
 
-			<button type="button" className="add-cart-button" onClick={onClickAddCartButton}>
+			<button type="button" className="add-cart-button lg-hidden" onClick={onClickAddCartButton}>
 				장바구니에 담기
 			</button>
 
