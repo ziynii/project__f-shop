@@ -20,6 +20,11 @@
 	}
 
 	@include responsive(T) {
-		height: 100vh;
+		height: calc(100vh - #{$header-height-lg});
+	}
+
+	@include responsive(D) {
+		margin-top: $header-height-lg;
+		padding: 0;
 	}
 }
