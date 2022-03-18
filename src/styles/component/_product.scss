@@ -1,22 +1,29 @@
 .product {
 	@include column-flexbox(start, start);
 
-	&-image {
-		position: relative;
+	&-left-section,
+	&-right-section {
 		width: 100%;
-		height: 400px;
-		margin-bottom: 24px;
-		text-align: center;
-		background-color: $white;
-		overflow: hidden;
-		border-radius: 16px;
+	}
 
-		img {
-			@include pos-center;
-			height: auto;
-			width: auto;
-			max-width: 95%;
-			max-height: 95%;
+	&-left-section {
+		.product-image {
+			position: relative;
+			width: 100%;
+			height: 400px;
+			margin-bottom: 24px;
+			text-align: center;
+			background-color: $white;
+			overflow: hidden;
+			border-radius: 16px;
+
+			img {
+				@include pos-center;
+				height: auto;
+				width: auto;
+				max-width: 95%;
+				max-height: 95%;
+			}
 		}
 	}
 
@@ -34,14 +41,72 @@
 	}
 
 	&-price {
-		margin-bottom: 16px;
-
 		@include text-style(14, $secondary);
+		margin-bottom: 16px;
 	}
 
 	&-description {
 		@include text-style(14, $primary);
 		margin-bottom: $cart-button-height;
 		padding-bottom: 24px;
+	}
+
+	&-slide {
+		&-title {
+			margin-bottom: 16px;
+		}
+	}
+
+	@include responsive(D) {
+		height: calc(100vh - #{$header-height-lg});
+		flex-direction: row;
+
+		& > div {
+			height: 100%;
+			padding: 24px 0;
+		}
+
+		&-left-section {
+			flex-basis: 60%;
+			border-right: 1px solid $border;
+
+			.product-image {
+				width: 90%;
+				height: 400px;
+				text-align: center;
+			}
+		}
+
+		&-right-section {
+			flex-basis: 40%;
+			text-align: center;
+
+			.product {
+				&-category,
+				&-title,
+				&-price,
+				&-description {
+					width: 90%;
+					margin: 0 auto;
+					margin-bottom: 24px;
+					text-align: left;
+				}
+
+				&-category {
+					@include text-style(14);
+					margin-bottom: 12px;
+				}
+
+				&-title {
+					h2 {
+						@include text-style(24);
+					}
+				}
+
+				&-price {
+					@include text-style(16);
+				}
+			}
+		}
 	}
 }
