@@ -15,3 +15,12 @@
 		position: relative;
 	}
 }
+
+.add-cart-button {
+	@include responsive(D) {
+		position: relative;
+		display: inline-block;
+		width: 90%;
+		margin: 0 auto;
+	}
+}
