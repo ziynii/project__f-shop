@@ -6,13 +6,23 @@
 	left: 0;
 	width: 100%;
 	height: $cart-button-height;
-	background-color: $black;
+	background-color: $dark;
 	border-radius: 8px;
+	font-weight: 700;
 }
 
 .pay-button {
 	@include responsive(T) {
 		position: relative;
+	}
+
+	@include responsive(D) {
+		color: $dark;
+		background-color: $white;
+
+		&:hover {
+			background-color: $border;
+		}
 	}
 }
 
