@@ -26,8 +26,8 @@
 				position: absolute;
 				right: 0;
 				bottom: 0;
-				width: 42px;
-				height: 42px;
+				width: 43px;
+				height: 43px;
 				background-color: $dark;
 
 				svg {
@@ -37,11 +37,14 @@
 		}
 
 		&-box-title {
+			@include text-style(18, $dark);
 			margin-bottom: 16px;
+		}
+	}
 
-			h3 {
-				@include text-style(18, $dark);
-			}
+	@include responsive(D) {
+		.coupon-box-title {
+			color: $white;
 		}
 	}
 }
