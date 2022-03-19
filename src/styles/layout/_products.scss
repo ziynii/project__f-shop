@@ -39,4 +39,14 @@
 		flex-wrap: wrap;
 		margin-bottom: 48px;
 	}
+
+	@include responsive(D) {
+		&-title {
+			height: 240px;
+
+			h2 {
+				font-size: 32px;
+			}
+		}
+	}
 }
