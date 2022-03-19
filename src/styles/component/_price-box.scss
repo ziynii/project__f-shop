@@ -57,5 +57,45 @@
 		width: 32px;
 		height: 56px;
 		background-color: $background;
+		border-radius: 8px 0 0 8px;
+	}
+
+	@include responsive(D) {
+		background-color: $primary;
+
+		.summary {
+			color: $white;
+		}
+
+		.summary-info {
+			span {
+				color: $white;
+			}
+		}
+
+		.total-price {
+			margin-bottom: 48px;
+
+			.discount {
+				@include flexbox(between);
+				padding: 8px 0;
+
+				span {
+					@include text-style(16, $red);
+				}
+			}
+		}
+
+		.open-button {
+			left: -48px;
+			width: 48px;
+			height: 80px;
+			background-color: $primary;
+
+			.fa-angle-left {
+				font-size: 24px;
+				color: $white;
+			}
+		}
 	}
 }
