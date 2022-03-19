@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
@@ -16,9 +16,18 @@ const Category = () => {
 	);
 	const shortName = name?.replace("'s clothing", '');
 	const [headerGnb, setHeaderGnb] = useRecoilState<string | undefined>(headerGnbState);
+	const [sortValue, setSortValue] = useState('best');
+	if (sortValue === 'best') {
+		data?.sort((a, b) => a.id - b.id);
+	} else if (sortValue === 'low') {
+		data?.sort((a, b) => a.price - b.price);
+	} else if (sortValue === 'high') {
+		data?.sort((a, b) => b.price - a.price);
+	}
 
 	useEffect(() => {
 		setHeaderGnb(shortName);
+		setSortValue('best');
 	}, [name]);
 
 	return (
@@ -38,6 +47,31 @@ const Category = () => {
 							<div className="col-sm-4">
 								<div className="products-wrapper">
 									<main className="products-content">
+										<div className="products-sort">
+											<button
+												className={
+													'price-sort-button best' + (sortValue === 'best' ? ' active' : '')
+												}
+												onClick={() => setSortValue('best')}
+											>
+												인기순
+											</button>
+											<button
+												className={'price-sort-button low' + (sortValue === 'low' ? ' active' : '')}
+												onClick={() => setSortValue('low')}
+											>
+												가격 낮은순
+											</button>
+											<button
+												className={
+													'price-sort-button high' + (sortValue === 'high' ? ' active' : '')
+												}
+												onClick={() => setSortValue('high')}
+											>
+												가격 높은순
+											</button>
+										</div>
+
 										<ul className="products-list">
 											{data?.map(product => {
 												return (

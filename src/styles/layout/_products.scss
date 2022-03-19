@@ -18,6 +18,22 @@
 		}
 	}
 
+	.price-sort-button {
+		@include text-style(14, $primary);
+		padding: 8px 0px;
+		margin-bottom: 16px;
+
+		&.active {
+			font-weight: 700;
+		}
+
+		&:not(:last-child)::after {
+			content: '|';
+			margin: 8px 12px;
+			font-size: 14px;
+		}
+	}
+
 	&-list {
 		@include flexbox(between, start);
 		flex-wrap: wrap;
