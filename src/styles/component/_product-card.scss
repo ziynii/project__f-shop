@@ -42,4 +42,35 @@
 			}
 		}
 	}
+
+	@include responsive(D) {
+		width: 32%;
+		margin-bottom: 36px;
+
+		.item-wrapper {
+			&:hover {
+				.item-image,
+				.item-title,
+				.item-price {
+					opacity: 0.7;
+				}
+			}
+		}
+
+		.item {
+			&-image {
+				@include flexbox;
+				height: 360px;
+				margin-bottom: 16px;
+			}
+
+			&-title {
+				@include text-style(16);
+			}
+
+			&-price {
+				@include text-style(14);
+			}
+		}
+	}
 }
