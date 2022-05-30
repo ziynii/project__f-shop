@@ -38,7 +38,7 @@ const Category = () => {
 				<>
 					<div
 						className="products-title"
-						style={{ backgroundImage: `url(/images/${shortName}.jpg)` }}
+						style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/${shortName}.jpg)` }}
 					>
 						<h2>{shortName}</h2>
 					</div>

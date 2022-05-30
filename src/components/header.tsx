@@ -44,7 +44,7 @@ const Header = () => {
 							) : null}
 
 							<div className="header-logo" onClick={onClickLogo}>
-								<img src="/logo.svg" alt="로고" />
+								<img src="https://ziynii.github.io/project__f-shop/logo.svg" alt="로고" />
 							</div>
 
 							<HeaderGnb />

@@ -8,7 +8,9 @@ const CategoryItem = ({ categoryTitle }: ICategoryItemProps) => {
 	return (
 		<div
 			className={`category-box ${categoryTitle}`}
-			style={{ backgroundImage: `url(/images/${categoryTitle}.jpg)` }}
+			style={{
+				backgroundImage: `url(https://ziynii.github.io/project__f-shop/images/${categoryTitle}.jpg)`,
+			}}
 		>
 			<div className="category-title">
 				<h2>{categoryTitle.toUpperCase()}</h2>
