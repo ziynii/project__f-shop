@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './styles/main.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -17,21 +17,19 @@ function App() {
 	const openSideBar = useRecoilValue(openSideBarState);
 
 	return (
-		<>
-			<BrowserRouter>
-				<ScrollToTop />
-				<Header />
+		<BrowserRouter basename="/project__f-shop">
+			<ScrollToTop />
+			<Header />
 
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/cart" element={<Cart />} />
-					<Route path="products/:name" element={<Products />} />
-					<Route path="products/:name/:productId" element={<ProductDetail />} />
-				</Routes>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/cart" element={<Cart />} />
+				<Route path="products/:name" element={<Products />} />
+				<Route path="products/:name/:productId" element={<ProductDetail />} />
+			</Routes>
 
-				{openSideBar === true ? <SideBar /> : null}
-			</BrowserRouter>
-		</>
+			{openSideBar === true ? <SideBar /> : null}
+		</BrowserRouter>
 	);
 }
 
