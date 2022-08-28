@@ -1,11 +1,11 @@
 
-### ✨ 소개
+### │ 소개
 
-open api인 Fake store를 이용해 만든 쇼핑몰 웹 사이트입니다
+open api인 Fake store를 이용해 만든 쇼핑몰 웹 사이트입니다.
 
 <br />
 
-### ✨ Link
+### │ Link
 
 **🔗 github**
 
@@ -18,7 +18,14 @@ open api인 Fake store를 이용해 만든 쇼핑몰 웹 사이트입니다
 
 <br />
 
-### ✨ Skill
+### │ 주요기능
+1. 상품 가격순으로 정렬
+2. 장바구니 담기
+3. 결제 시 쿠폰 적용
+
+<br />
+
+### │ Skill
 
 🔸 **React**
 
@@ -47,7 +54,7 @@ open api인 Fake store를 이용해 만든 쇼핑몰 웹 사이트입니다
 <br />
 
 
-### ✨ Desktop
+### │ Desktop
 
 **🔸 홈**
 
@@ -69,7 +76,7 @@ open api인 Fake store를 이용해 만든 쇼핑몰 웹 사이트입니다
 
 <br />
 
-### ✨ Tablet
+### │ Tablet
 
 
 
@@ -95,7 +102,7 @@ open api인 Fake store를 이용해 만든 쇼핑몰 웹 사이트입니다
 <br />
 
 
-### ✨ Mobile
+### │ Mobile
 
 **🔸 홈**
 
